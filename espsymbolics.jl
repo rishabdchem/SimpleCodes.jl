@@ -1,18 +1,18 @@
 using Symbolics
 
-#=======================================================
-# Symbolical evaluation of an m-variable
-# n-degree elementary symmetric polynomial.
-# The integers m and n are user defined.
-=======================================================#
+#=====================================================
+Symbolical evaluation of an m-variable
+n-degree elementary symmetric polynomial.
+The integers m and n are user defined.
+=====================================================#
 
 """
 SumESP algorithm.
 See DOI: 10.1016/j.amc.2015.08.134.
 
 # Arguments
-- V: vector of dimension m
-- n: degree of ESP
+- `V`: vector of dimension m
+- `n`: degree of ESP
 """
 function sumesp(V::AbstractVector{T}, 
 	        n::Int) where T<:Num
@@ -45,7 +45,7 @@ let
     @variables V[1:m] 
 
     # Get ESP
-    Emn = sumesp(V, n)
+    Emn = expand(sumesp(V, n))
 
     # Print
     println("m: $m, n: $n")
