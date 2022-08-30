@@ -1,5 +1,5 @@
 using Optim 
-using Optim:only_fg!, minimum, minimizer
+using Optim: only_fg!, minimum, minimizer
 
 #=====================================================
 General usage of the Optim.jl package.
